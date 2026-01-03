@@ -29,17 +29,30 @@ btn.onclick = function(){
                 let img = document.createElement('img');
                 img.setAttribute('src', response.data.avatar_url);
                 img.setAttribute('alt', response.data.name);
-                img.setAttribute('width', '500px');
-                img.setAttribute('height', '500px');
+                img.setAttribute('width', '100px');
+                img.setAttribute('height', '100px');
+                img.setAttribute('style', 'border-radius: 50%');
+                div.setAttribute('style', 'margin-top: 30px; margin-left: 30px;');
 
                 div.appendChild(img);
 
             }else{
-                txtNome = document.createTextNode('O usuário nao possui nome.')
+                txtNome = document.createTextNode('O usuário nao possui nome.');
+                
+                let img = document.createElement('img');
+                img.setAttribute('src', response.data.avatar_url);
+                img.setAttribute('alt', response.data.name);
+                img.setAttribute('width', '100px');
+                img.setAttribute('height', '100px');
+                img.setAttribute('style', 'border-radius: 50%');
+                div.setAttribute('style', 'margin-top: 30px; margin-left: 30px;');
+
+                div.appendChild(img);
             }
 
             //adiciona o conteúdo na div
             spanNome.appendChild(txtNome);
+            spanNome.setAttribute('style', 'font-size: 24px; font-weight: bold; margin-left: 10px;');
             div.appendChild(spanNome);
         })
         .catch(function(error){
